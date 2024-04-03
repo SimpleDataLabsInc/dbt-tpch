@@ -1,0 +1,85 @@
+{
+  "id" : "suppliers",
+  "metainfo" : {
+    "label" : "suppliers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "suppliers##HG9c0mhF" : {
+      "id" : "suppliers##HG9c0mhF",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "suppliers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_supplier",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "CrNQoR7V",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "suppliers##G796VbGw" : {
+      "id" : "suppliers##G796VbGw",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "suppliers",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  s.supplier_key,\n  s.supplier_name,\n  s.supplier_address,\n  s.nation_key,\n  s.supplier_phone_number,\n  s.supplier_account_balance\n\nFROM suppliers AS s\n\nORDER BY s.supplier_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AcWpskYR",
+          "slug" : "s"
+        } ],
+        "outputs" : [ {
+          "id" : "xr0sjeBx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "Y2wfNwkH",
+    "source" : "suppliers##HG9c0mhF",
+    "sourcePort" : "CrNQoR7V",
+    "target" : "suppliers##G796VbGw",
+    "targetPort" : "AcWpskYR"
+  } ],
+  "component" : "Model"
+}

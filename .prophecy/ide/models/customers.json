@@ -1,0 +1,85 @@
+{
+  "id" : "customers",
+  "metainfo" : {
+    "label" : "customers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "customers##TrOiOZeK" : {
+      "id" : "customers##TrOiOZeK",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "customers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_customer",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "n3ilCAIf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "customers##DQghn0mn" : {
+      "id" : "customers##DQghn0mn",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "customers",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  c.customer_key,\n  c.customer_name,\n  c.customer_address,\n  c.nation_key,\n  c.customer_phone_number,\n  c.customer_account_balance,\n  c.customer_market_segment_name\n\nFROM customers AS c\n\nORDER BY c.customer_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CHSwTs3j",
+          "slug" : "c"
+        } ],
+        "outputs" : [ {
+          "id" : "knVBicWM",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "PWtrdUv9",
+    "source" : "customers##TrOiOZeK",
+    "sourcePort" : "n3ilCAIf",
+    "target" : "customers##DQghn0mn",
+    "targetPort" : "CHSwTs3j"
+  } ],
+  "component" : "Model"
+}

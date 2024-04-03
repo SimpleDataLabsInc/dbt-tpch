@@ -1,0 +1,148 @@
+{
+  "id" : "dim_part",
+  "metainfo" : {
+    "label" : "dim_part",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "parts##Ba50NIfG" : {
+      "id" : "parts##Ba50NIfG",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "parts",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "parts",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "OIg1gKyg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##hlMZwkM2" : {
+      "id" : "final##hlMZwkM2",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "final",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "p.part_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_manufacturer_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_brand_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_type_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_size"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.part_container_desc"
+          }
+        }, {
+          "expression" : {
+            "expression" : "p.retail_price"
+          }
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gNNdBu21",
+          "slug" : "p"
+        } ],
+        "outputs" : [ {
+          "id" : "gXgRXeNQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "dim_part##i7ZXh40e" : {
+      "id" : "dim_part##i7ZXh40e",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "dim_part",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.part_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vtfHQNln",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "dZIQtZXn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "n96wgSSu",
+    "source" : "parts##Ba50NIfG",
+    "sourcePort" : "OIg1gKyg",
+    "target" : "final##hlMZwkM2",
+    "targetPort" : "gNNdBu21"
+  }, {
+    "id" : "eSu9ypP1",
+    "source" : "final##hlMZwkM2",
+    "sourcePort" : "gXgRXeNQ",
+    "target" : "dim_part##i7ZXh40e",
+    "targetPort" : "vtfHQNln"
+  } ],
+  "component" : "Model"
+}

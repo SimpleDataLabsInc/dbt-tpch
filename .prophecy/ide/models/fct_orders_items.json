@@ -1,0 +1,262 @@
+{
+  "id" : "fct_orders_items",
+  "metainfo" : {
+    "label" : "fct_orders_items",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "orders_items##WXUXm2xk" : {
+      "id" : "orders_items##WXUXm2xk",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders_items",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders_items",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "zYys72N5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "parts_suppliers##qmk7xAOT" : {
+      "id" : "parts_suppliers##qmk7xAOT",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "parts_suppliers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "parts_suppliers",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Vlhrrp4C",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##AKZf3PgC" : {
+      "id" : "final##AKZf3PgC",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "final",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "ps",
+          "expression" : {
+            "expression" : "o.part_key = ps.part_key and o.supplier_key = ps.supplier_key"
+          },
+          "joinType" : ""
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "o.order_item_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_date"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.customer_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_status_code"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.part_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.supplier_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.return_status_code"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_line_number"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_line_status_code"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.ship_date"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.commit_date"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.receipt_date"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.ship_mode_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "ps.supplier_cost_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "{#ps.retail_price,#}\no.base_price"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.discount_percentage"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.discounted_price"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.tax_rate"
+          }
+        }, {
+          "expression" : {
+            "expression" : "1"
+          },
+          "alias" : "order_item_count"
+        }, {
+          "expression" : {
+            "expression" : "o.quantity"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.gross_item_sales_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.discounted_item_sales_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.item_discount_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.item_tax_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.net_item_sales_amount"
+          }
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "o"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "S3iv20gb",
+          "slug" : "o"
+        }, {
+          "id" : "dT3NxLJP",
+          "slug" : "ps"
+        } ],
+        "outputs" : [ {
+          "id" : "pb8WLmrA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fct_orders_items##cy1fS8hc" : {
+      "id" : "fct_orders_items##cy1fS8hc",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "fct_orders_items",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.order_date\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mlXu7SG4",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "M8sfaMYf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "voT4d60A",
+    "source" : "orders_items##WXUXm2xk",
+    "sourcePort" : "zYys72N5",
+    "target" : "final##AKZf3PgC",
+    "targetPort" : "S3iv20gb"
+  }, {
+    "id" : "BNrURsh1",
+    "source" : "parts_suppliers##qmk7xAOT",
+    "sourcePort" : "Vlhrrp4C",
+    "target" : "final##AKZf3PgC",
+    "targetPort" : "dT3NxLJP"
+  }, {
+    "id" : "sNDgKovq",
+    "source" : "final##AKZf3PgC",
+    "sourcePort" : "pb8WLmrA",
+    "target" : "fct_orders_items##cy1fS8hc",
+    "targetPort" : "mlXu7SG4"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,85 @@
+{
+  "id" : "regions",
+  "metainfo" : {
+    "label" : "regions",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "regions##axyxp1qD" : {
+      "id" : "regions##axyxp1qD",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_region",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "qiExVxy9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "regions##sqp8xPUK" : {
+      "id" : "regions##sqp8xPUK",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  r.region_key,\n  r.region_name\n\nFROM regions AS r\n\nORDER BY r.region_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "g4MWC5vr",
+          "slug" : "r"
+        } ],
+        "outputs" : [ {
+          "id" : "PEShg8pl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "R1QV3NgE",
+    "source" : "regions##axyxp1qD",
+    "sourcePort" : "qiExVxy9",
+    "target" : "regions##sqp8xPUK",
+    "targetPort" : "g4MWC5vr"
+  } ],
+  "component" : "Model"
+}
