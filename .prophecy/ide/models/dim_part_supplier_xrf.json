@@ -353,6 +353,80 @@
           "slug" : "p"
         }, {
           "id" : "RkQ6M4Mh",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "ps"
         }, {
           "id" : "cKhxVPjd",
@@ -433,6 +507,110 @@
         } ],
         "outputs" : [ {
           "id" : "DbPJoRzn",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -460,10 +638,228 @@
       "ports" : {
         "inputs" : [ {
           "id" : "gtNWF6mp",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "f"
         } ],
         "outputs" : [ {
           "id" : "bgJV5slb",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DBT_BATCH_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "DBT_BATCH_TS",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -529,6 +925,80 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "XBauY6iy",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

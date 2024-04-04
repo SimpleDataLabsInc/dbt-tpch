@@ -1,16 +1,17 @@
 {{
-    config(
-        materialized = 'ephemeral'
-    )
+  config({    
+    "materialized": "ephemeral"
+  })
 }}
-select
-    c_custkey as customer_key,
-    c_name as customer_name,
-    c_address as customer_address,
-    c_nationkey as nation_key,
-    c_phone as customer_phone_number,
-    c_acctbal{{ money() }} as customer_account_balance,
-    c_mktsegment as customer_market_segment_name,
-    c_comment as customer_comment
-from
-    {{ source('tpch', 'customer') }}
+
+SELECT 
+  c_custkey AS customer_key,
+  c_name AS customer_name,
+  c_address AS customer_address,
+  c_nationkey AS nation_key,
+  c_phone AS customer_phone_number,
+  c_acctbal{{ money() }} AS customer_account_balance,
+  c_mktsegment AS customer_market_segment_name,
+  c_comment AS customer_comment
+
+FROM {{ source('tpch', 'customer') }}

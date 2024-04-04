@@ -36,6 +36,130 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "O6lliHqM",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ITEM_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RETURN_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_LINE_NUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_LINE_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIP_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "COMMIT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "RECEIPT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "SHIP_MODE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BASE_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNT_PERCENTAGE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GROSS_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_DISCOUNT_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "TAX_RATE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_TAX_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NET_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -59,6 +183,80 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "lE6ydHyf",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -194,13 +392,345 @@
       "ports" : {
         "inputs" : [ {
           "id" : "mPtDh8hB",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ITEM_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RETURN_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_LINE_NUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_LINE_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIP_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "COMMIT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "RECEIPT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "SHIP_MODE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BASE_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNT_PERCENTAGE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GROSS_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_DISCOUNT_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "TAX_RATE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_TAX_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NET_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "o"
         }, {
           "id" : "C0LNbLGI",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "ps"
         } ],
         "outputs" : [ {
           "id" : "b6K6o3XF",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ITEM_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RETURN_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_LINE_NUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_LINE_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIP_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "COMMIT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "RECEIPT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "SHIP_MODE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BASE_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNT_PERCENTAGE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "TAX_RATE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_ITEM_COUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GROSS_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_DISCOUNT_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_TAX_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NET_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -228,10 +758,288 @@
       "ports" : {
         "inputs" : [ {
           "id" : "uKNtnZex",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ITEM_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RETURN_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_LINE_NUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_LINE_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIP_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "COMMIT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "RECEIPT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "SHIP_MODE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BASE_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNT_PERCENTAGE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "TAX_RATE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_ITEM_COUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GROSS_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_DISCOUNT_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_TAX_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NET_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "f"
         } ],
         "outputs" : [ {
           "id" : "ha3eLl9o",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ITEM_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RETURN_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_LINE_NUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_LINE_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIP_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "COMMIT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "RECEIPT_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "SHIP_MODE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BASE_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNT_PERCENTAGE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "TAX_RATE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_ITEM_COUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GROSS_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_DISCOUNT_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ITEM_TAX_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NET_ITEM_SALES_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "DBT_BATCH_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "DBT_BATCH_TS",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

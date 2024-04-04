@@ -2,7 +2,7 @@
   "id" : "parts_suppliers",
   "metainfo" : {
     "label" : "parts_suppliers",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "parts",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -91,6 +93,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "suppliers",
+        "x" : 20,
+        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -148,6 +152,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "part_suppliers",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -200,14 +206,16 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "parts_suppliers",
+        "x" : 220,
+        "y" : 220,
         "phase" : 0,
-        "macroDependencies" : [ "dbt_utils.surrogate_key" ]
+        "macroDependencies" : [ "dbt_tpch.surrogate_key" ]
       },
       "properties" : {
         "customQueryDisabled" : false,
         "customQuery" : true,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT \n  {{ dbt_utils.surrogate_key('p.part_key', 's.supplier_key') }} AS part_supplier_key,\n  p.part_key,\n  p.part_name,\n  p.part_manufacturer_name,\n  p.part_brand_name,\n  p.part_type_name,\n  p.part_size,\n  p.part_container_desc,\n  p.retail_price,\n  s.supplier_key,\n  s.supplier_name,\n  s.nation_key,\n  ps.supplier_availabe_quantity,\n  ps.supplier_cost_amount\n\nFROM parts AS p\nJOIN part_suppliers AS ps\n   ON p.part_key = ps.part_key\nJOIN suppliers AS s\n   ON ps.supplier_key = s.supplier_key\n\nORDER BY p.part_key\n",
+        "query" : "SELECT \n  {{ dbt_tpch.surrogate_key('p.part_key', 's.supplier_key') }} AS part_supplier_key,\n  p.part_key,\n  p.part_name,\n  p.part_manufacturer_name,\n  p.part_brand_name,\n  p.part_type_name,\n  p.part_size,\n  p.part_container_desc,\n  p.retail_price,\n  s.supplier_key,\n  s.supplier_name,\n  s.nation_key,\n  ps.supplier_availabe_quantity,\n  ps.supplier_cost_amount\n\nFROM parts AS p\nJOIN part_suppliers AS ps\n   ON p.part_key = ps.part_key\nJOIN suppliers AS s\n   ON ps.supplier_key = s.supplier_key\n\nORDER BY p.part_key\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -333,6 +341,80 @@
         } ],
         "outputs" : [ {
           "id" : "Hsn3Yjga",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

@@ -2,7 +2,7 @@
   "id" : "base_customer",
   "metainfo" : {
     "label" : "base_customer",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_customer",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ "money" ]
       },

@@ -2,7 +2,7 @@
   "id" : "parts",
   "metainfo" : {
     "label" : "parts",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "parts",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -96,6 +98,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "parts",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
