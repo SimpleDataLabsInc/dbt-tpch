@@ -90,6 +90,50 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "Gz7PEtIP",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_PRIORITY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_CLERK_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIPPING_PRIORITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -228,6 +272,50 @@
       "ports" : {
         "inputs" : [ {
           "id" : "tlwkUoPv",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_STATUS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_PRIORITY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORDER_CLERK_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SHIPPING_PRIORITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "o"
         }, {
           "id" : "PUyWZeyn",

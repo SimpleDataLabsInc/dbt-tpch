@@ -41,6 +41,25 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "MG8nWeiW",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

@@ -36,6 +36,55 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "aw40RJjc",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -63,10 +112,103 @@
       "ports" : {
         "inputs" : [ {
           "id" : "RIijh0o4",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "p"
         } ],
         "outputs" : [ {
           "id" : "UdQ1aGPM",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
