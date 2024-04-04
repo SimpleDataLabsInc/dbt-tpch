@@ -1,0 +1,235 @@
+{
+  "id" : "dim_supplier",
+  "metainfo" : {
+    "label" : "dim_supplier",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "regions##FxvWLf7g" : {
+      "id" : "regions##FxvWLf7g",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "regions",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "vU370E20",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##k1Z3px03" : {
+      "id" : "final##k1Z3px03",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "final",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "n",
+          "expression" : {
+            "expression" : "s.nation_key = n.nation_key"
+          },
+          "joinType" : ""
+        }, {
+          "alias" : "r",
+          "expression" : {
+            "expression" : "n.region_key = r.region_key"
+          },
+          "joinType" : ""
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.supplier_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.supplier_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.supplier_address"
+          }
+        }, {
+          "expression" : {
+            "expression" : "n.nation_key"
+          },
+          "alias" : "supplier_nation_key"
+        }, {
+          "expression" : {
+            "expression" : "n.nation_name"
+          },
+          "alias" : "supplier_nation_name"
+        }, {
+          "expression" : {
+            "expression" : "r.region_key"
+          },
+          "alias" : "supplier_region_key"
+        }, {
+          "expression" : {
+            "expression" : "r.region_name"
+          },
+          "alias" : "supplier_region_name"
+        }, {
+          "expression" : {
+            "expression" : "s.supplier_phone_number"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.supplier_account_balance"
+          }
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U6ZSdpwO",
+          "slug" : "s"
+        }, {
+          "id" : "XGx3JAKb",
+          "slug" : "n"
+        }, {
+          "id" : "hLLGyh1Q",
+          "slug" : "r"
+        } ],
+        "outputs" : [ {
+          "id" : "VYH5oPWK",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nations##i4PjPDUQ" : {
+      "id" : "nations##i4PjPDUQ",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "nations",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "nations",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Y91oJhJH",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "suppliers##WsbnxnuS" : {
+      "id" : "suppliers##WsbnxnuS",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "suppliers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "suppliers",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "BsSy6c4D",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "dim_supplier##r8sabtaA" : {
+      "id" : "dim_supplier##r8sabtaA",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "dim_supplier",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.supplier_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "djG3nIwA",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "A5h7Bccz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "wuhLO2bT",
+    "source" : "suppliers##WsbnxnuS",
+    "sourcePort" : "BsSy6c4D",
+    "target" : "final##k1Z3px03",
+    "targetPort" : "U6ZSdpwO"
+  }, {
+    "id" : "sF5DP8SG",
+    "source" : "nations##i4PjPDUQ",
+    "sourcePort" : "Y91oJhJH",
+    "target" : "final##k1Z3px03",
+    "targetPort" : "XGx3JAKb"
+  }, {
+    "id" : "x4PkU6SU",
+    "source" : "regions##FxvWLf7g",
+    "sourcePort" : "vU370E20",
+    "target" : "final##k1Z3px03",
+    "targetPort" : "hLLGyh1Q"
+  }, {
+    "id" : "Sgc6mvmQ",
+    "source" : "final##k1Z3px03",
+    "sourcePort" : "VYH5oPWK",
+    "target" : "dim_supplier##r8sabtaA",
+    "targetPort" : "djG3nIwA"
+  } ],
+  "component" : "Model"
+}

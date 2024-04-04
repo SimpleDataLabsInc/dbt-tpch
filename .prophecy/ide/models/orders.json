@@ -1,0 +1,85 @@
+{
+  "id" : "orders",
+  "metainfo" : {
+    "label" : "orders",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "orders##LE960bbR" : {
+      "id" : "orders##LE960bbR",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_orders",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "AAUFAw3e",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "orders##LNjJTqlJ" : {
+      "id" : "orders##LNjJTqlJ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  o.order_key,\n  o.order_date,\n  o.customer_key,\n  o.order_status_code,\n  o.order_priority_code,\n  o.order_clerk_name,\n  o.shipping_priority,\n  o.order_amount\n\nFROM orders AS o\n\nORDER BY o.order_date\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KBL6ZM9h",
+          "slug" : "o"
+        } ],
+        "outputs" : [ {
+          "id" : "r3w6m6aj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "yfxWzprt",
+    "source" : "orders##LE960bbR",
+    "sourcePort" : "AAUFAw3e",
+    "target" : "orders##LNjJTqlJ",
+    "targetPort" : "KBL6ZM9h"
+  } ],
+  "component" : "Model"
+}

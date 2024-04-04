@@ -1,0 +1,271 @@
+{
+  "id" : "fct_orders",
+  "metainfo" : {
+    "label" : "fct_orders",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "orders_items##xL5IPNbK" : {
+      "id" : "orders_items##xL5IPNbK",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders_items",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders_items",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "NMfMAxWh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fct_orders##QSFamQfY" : {
+      "id" : "fct_orders##QSFamQfY",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "fct_orders",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.order_date\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "C0a5nToO",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "WdFphS7S",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "orders##KIMUlrJm" : {
+      "id" : "orders##KIMUlrJm",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Gz7PEtIP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "order_item_summary##UWsVclJw" : {
+      "id" : "order_item_summary##UWsVclJw",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "order_item_summary",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "o.order_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "sum(o.gross_item_sales_amount)"
+          },
+          "alias" : "gross_item_sales_amount"
+        }, {
+          "expression" : {
+            "expression" : "sum(o.item_discount_amount)"
+          },
+          "alias" : "item_discount_amount"
+        }, {
+          "expression" : {
+            "expression" : "sum(o.item_tax_amount)"
+          },
+          "alias" : "item_tax_amount"
+        }, {
+          "expression" : {
+            "expression" : "sum(o.net_item_sales_amount)"
+          },
+          "alias" : "net_item_sales_amount"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "1"
+          }
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pr3XpgE2",
+          "slug" : "o"
+        } ],
+        "outputs" : [ {
+          "id" : "W98hHDM1",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##Ns9blrqR" : {
+      "id" : "final##Ns9blrqR",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "final",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "s",
+          "expression" : {
+            "expression" : "o.order_key = s.order_key"
+          },
+          "joinType" : ""
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "o.order_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_date"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.customer_key"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_status_code"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_priority_code"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.order_clerk_name"
+          }
+        }, {
+          "expression" : {
+            "expression" : "o.shipping_priority"
+          }
+        }, {
+          "expression" : {
+            "expression" : "1"
+          },
+          "alias" : "order_count"
+        }, {
+          "expression" : {
+            "expression" : "s.gross_item_sales_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.item_discount_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.item_tax_amount"
+          }
+        }, {
+          "expression" : {
+            "expression" : "s.net_item_sales_amount"
+          }
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "o"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tlwkUoPv",
+          "slug" : "o"
+        }, {
+          "id" : "PUyWZeyn",
+          "slug" : "s"
+        } ],
+        "outputs" : [ {
+          "id" : "hsSCga6X",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "P5o05G6P",
+    "source" : "orders_items##xL5IPNbK",
+    "sourcePort" : "NMfMAxWh",
+    "target" : "order_item_summary##UWsVclJw",
+    "targetPort" : "pr3XpgE2"
+  }, {
+    "id" : "RPwCKnUN",
+    "source" : "orders##KIMUlrJm",
+    "sourcePort" : "Gz7PEtIP",
+    "target" : "final##Ns9blrqR",
+    "targetPort" : "tlwkUoPv"
+  }, {
+    "id" : "PSJ3RCbb",
+    "source" : "order_item_summary##UWsVclJw",
+    "sourcePort" : "W98hHDM1",
+    "target" : "final##Ns9blrqR",
+    "targetPort" : "PUyWZeyn"
+  }, {
+    "id" : "pwNGZ43v",
+    "source" : "final##Ns9blrqR",
+    "sourcePort" : "hsSCga6X",
+    "target" : "fct_orders##QSFamQfY",
+    "targetPort" : "C0a5nToO"
+  } ],
+  "component" : "Model"
+}
