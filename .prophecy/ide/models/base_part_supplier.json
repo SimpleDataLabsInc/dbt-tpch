@@ -2,7 +2,7 @@
   "id" : "base_part_supplier",
   "metainfo" : {
     "label" : "base_part_supplier",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_part_supplier",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ "money" ]
       },
@@ -41,6 +43,35 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "O0vfPWtN",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_AVAILABE_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SUPPLIER_COST_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_SUPPLIER_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

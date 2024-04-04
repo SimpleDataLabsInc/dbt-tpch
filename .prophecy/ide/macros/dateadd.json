@@ -1,0 +1,65 @@
+{
+  "dateadd" : {
+    "name" : "dateadd",
+    "macroType" : "query",
+    "definition" : "dateadd(\n        {{ datepart }},\n        {{ interval }},\n        {{ from_date_or_timestamp }}\n        )",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "datepart",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "interval",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "from_date_or_timestamp",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "macros",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"surrogate_key\"\n  arguments: []\n  macroType: \"expression\"\n- name: \"dateadd\"\n  arguments:\n  - name: \"datepart\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"interval\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "dbt_tpch/macros/macros.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "surrogate_key",
+          "arguments" : [ ],
+          "macroType" : "expression"
+        }, {
+          "name" : "dateadd",
+          "arguments" : [ {
+            "name" : "datepart",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "interval",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null,
+      "editable" : true
+    },
+    "version" : 0
+  }
+}

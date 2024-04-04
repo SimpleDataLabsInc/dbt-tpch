@@ -1,0 +1,29 @@
+{
+  "surrogate_key" : {
+    "name" : "surrogate_key",
+    "macroType" : "expression",
+    "definition" : "{% set fields = [] %}\n\n{%- for field in varargs -%}\n\n    {% set _ = fields.append(\n        \"coalesce(cast(\" ~ field ~ \" as \" ~ dbt.type_string() ~ \"), '')\"\n    ) %}\n\n    {% if not loop.last %}\n        {% set _ = fields.append(\"'-'\") %}\n    {% endif %}\n\n{%- endfor -%}\n\n{{dbt.hash(dbt.concat(fields))}}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "macros",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"surrogate_key\"\n  arguments: []\n  macroType: \"expression\"\n",
+      "path" : "dbt_tpch/macros/macros.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "surrogate_key",
+          "arguments" : [ ],
+          "macroType" : "expression"
+        } ]
+      },
+      "packagesYml" : null,
+      "editable" : true
+    },
+    "version" : 0
+  }
+}

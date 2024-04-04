@@ -1,49 +1,53 @@
 {{
-    config(
-        materialized = 'table'
-    )
+  config({    
+    "materialized": "table"
+  })
 }}
-with parts as (
-    
-    select * from {{ ref('parts') }}
+
+WITH part_suppliers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('base_part_supplier')}}
 
 ),
-suppliers as (
 
-    select * from {{ ref('suppliers') }}
+parts AS (
+
+  SELECT * 
+  
+  FROM {{ ref('parts')}}
 
 ),
-part_suppliers as (
 
-    select * from {{ ref('base_part_supplier') }}
+suppliers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('suppliers')}}
 
 )
-select 
 
-    {{ dbt_utils.surrogate_key('p.part_key', 's.supplier_key') }} as part_supplier_key,
+SELECT 
+  {{ dbt_tpch.surrogate_key('p.part_key', 's.supplier_key') }} AS part_supplier_key,
+  p.part_key,
+  p.part_name,
+  p.part_manufacturer_name,
+  p.part_brand_name,
+  p.part_type_name,
+  p.part_size,
+  p.part_container_desc,
+  p.retail_price,
+  s.supplier_key,
+  s.supplier_name,
+  s.nation_key,
+  ps.supplier_availabe_quantity,
+  ps.supplier_cost_amount
 
-    p.part_key,
-    p.part_name,
-    p.part_manufacturer_name,
-    p.part_brand_name,
-    p.part_type_name,
-    p.part_size,
-    p.part_container_desc,
-    p.retail_price,
+FROM parts AS p
+JOIN part_suppliers AS ps
+   ON p.part_key = ps.part_key
+JOIN suppliers AS s
+   ON ps.supplier_key = s.supplier_key
 
-    s.supplier_key,
-    s.supplier_name,
-    s.nation_key,
-
-    ps.supplier_availabe_quantity,
-    ps.supplier_cost_amount
-from
-    parts p
-    join
-    part_suppliers ps
-        on p.part_key = ps.part_key
-    join
-    suppliers s
-        on ps.supplier_key = s.supplier_key
-order by
-    p.part_key
+ORDER BY p.part_key

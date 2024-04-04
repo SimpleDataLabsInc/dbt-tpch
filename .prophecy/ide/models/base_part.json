@@ -2,7 +2,7 @@
   "id" : "base_part",
   "metainfo" : {
     "label" : "base_part",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_part",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -41,6 +43,55 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "El9Y3boO",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PART_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_MANUFACTURER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_BRAND_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_TYPE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PART_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_CONTAINER_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RETAIL_PRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PART_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

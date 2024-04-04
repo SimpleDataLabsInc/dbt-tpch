@@ -41,6 +41,30 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "QzTcUtjq",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NATION_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

@@ -36,6 +36,25 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "qiExVxy9",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -63,10 +82,43 @@
       "ports" : {
         "inputs" : [ {
           "id" : "g4MWC5vr",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "r"
         } ],
         "outputs" : [ {
           "id" : "PEShg8pl",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

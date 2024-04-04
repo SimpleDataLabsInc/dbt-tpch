@@ -1,0 +1,18 @@
+---
+version: 2
+macros:
+- name: "surrogate_key"
+  arguments: []
+  macroType: "expression"
+- name: "dateadd"
+  arguments:
+  - name: "datepart"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "interval"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "from_date_or_timestamp"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  macroType: "query"

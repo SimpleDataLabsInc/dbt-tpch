@@ -36,6 +36,45 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "ZZmLvpLF",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -59,6 +98,25 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "rEtC767N",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -82,6 +140,20 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "cJywryoa",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -162,16 +234,142 @@
       "ports" : {
         "inputs" : [ {
           "id" : "v3CDuxVU",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "c"
         }, {
           "id" : "g1AFeLp5",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
           "slug" : "n"
         }, {
           "id" : "EqywZYuA",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "r"
         } ],
         "outputs" : [ {
           "id" : "p39Zlms3",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -199,10 +397,128 @@
       "ports" : {
         "inputs" : [ {
           "id" : "HvTj2lmJ",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "f"
         } ],
         "outputs" : [ {
           "id" : "Gtzpm3nl",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_NATION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_KEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_REGION_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_PHONE_NUMBER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_ACCOUNT_BALANCE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "DBT_BATCH_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "DBT_BATCH_TS",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

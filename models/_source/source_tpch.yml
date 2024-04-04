@@ -1,22 +1,219 @@
+---
 version: 2
-
 sources:
-  - name: tpch
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF10
-    loader: Snowflake
-    
-    quoting:
-      database: false
-      schema: false
-      identifier: false
-      
-    tables:
-      - name: customer
-      - name: lineitem
-      - name: nation
-      - name: orders
-      - name: part
-      - name: partsupp
-      - name: region
-      - name: supplier
+- name: "tpch"
+  database: "SNOWFLAKE_SAMPLE_DATA"
+  schema: "TPCH_SF10"
+  loader: "Snowflake"
+  quoting:
+    database: false
+    schema: false
+    identifier: false
+  tables:
+  - name: "customer"
+    identifier: "CUSTOMER"
+    columns:
+    - name: "C_CUSTKEY"
+      dataType:
+        type: "Number"
+    - name: "C_NAME"
+      dataType:
+        type: "String"
+    - name: "C_ADDRESS"
+      dataType:
+        type: "String"
+    - name: "C_NATIONKEY"
+      dataType:
+        type: "Number"
+    - name: "C_PHONE"
+      dataType:
+        type: "String"
+    - name: "C_ACCTBAL"
+      dataType:
+        type: "Number"
+    - name: "C_MKTSEGMENT"
+      dataType:
+        type: "String"
+    - name: "C_COMMENT"
+      dataType:
+        type: "String"
+  - name: "lineitem"
+    identifier: "LINEITEM"
+    columns:
+    - name: "L_ORDERKEY"
+      dataType:
+        type: "Number"
+    - name: "L_PARTKEY"
+      dataType:
+        type: "Number"
+    - name: "L_SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "L_LINENUMBER"
+      dataType:
+        type: "Number"
+    - name: "L_QUANTITY"
+      dataType:
+        type: "Number"
+    - name: "L_EXTENDEDPRICE"
+      dataType:
+        type: "Number"
+    - name: "L_DISCOUNT"
+      dataType:
+        type: "Number"
+    - name: "L_TAX"
+      dataType:
+        type: "Number"
+    - name: "L_RETURNFLAG"
+      dataType:
+        type: "String"
+    - name: "L_LINESTATUS"
+      dataType:
+        type: "String"
+    - name: "L_SHIPDATE"
+      dataType:
+        type: "Date"
+    - name: "L_COMMITDATE"
+      dataType:
+        type: "Date"
+    - name: "L_RECEIPTDATE"
+      dataType:
+        type: "Date"
+    - name: "L_SHIPINSTRUCT"
+      dataType:
+        type: "String"
+    - name: "L_SHIPMODE"
+      dataType:
+        type: "String"
+    - name: "L_COMMENT"
+      dataType:
+        type: "String"
+  - name: "nation"
+    identifier: "NATION"
+    columns:
+    - name: "N_NATIONKEY"
+      dataType:
+        type: "Number"
+    - name: "N_NAME"
+      dataType:
+        type: "String"
+    - name: "N_REGIONKEY"
+      dataType:
+        type: "Number"
+    - name: "N_COMMENT"
+      dataType:
+        type: "String"
+  - name: "orders"
+    identifier: "ORDERS"
+    columns:
+    - name: "O_ORDERKEY"
+      dataType:
+        type: "Number"
+    - name: "O_CUSTKEY"
+      dataType:
+        type: "Number"
+    - name: "O_ORDERSTATUS"
+      dataType:
+        type: "String"
+    - name: "O_TOTALPRICE"
+      dataType:
+        type: "Number"
+    - name: "O_ORDERDATE"
+      dataType:
+        type: "Date"
+    - name: "O_ORDERPRIORITY"
+      dataType:
+        type: "String"
+    - name: "O_CLERK"
+      dataType:
+        type: "String"
+    - name: "O_SHIPPRIORITY"
+      dataType:
+        type: "Number"
+    - name: "O_COMMENT"
+      dataType:
+        type: "String"
+  - name: "part"
+    identifier: "PART"
+    columns:
+    - name: "P_PARTKEY"
+      dataType:
+        type: "Number"
+    - name: "P_NAME"
+      dataType:
+        type: "String"
+    - name: "P_MFGR"
+      dataType:
+        type: "String"
+    - name: "P_BRAND"
+      dataType:
+        type: "String"
+    - name: "P_TYPE"
+      dataType:
+        type: "String"
+    - name: "P_SIZE"
+      dataType:
+        type: "Number"
+    - name: "P_CONTAINER"
+      dataType:
+        type: "String"
+    - name: "P_RETAILPRICE"
+      dataType:
+        type: "Number"
+    - name: "P_COMMENT"
+      dataType:
+        type: "String"
+  - name: "partsupp"
+    identifier: "PARTSUPP"
+    columns:
+    - name: "PS_PARTKEY"
+      dataType:
+        type: "Number"
+    - name: "PS_SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "PS_AVAILQTY"
+      dataType:
+        type: "Number"
+    - name: "PS_SUPPLYCOST"
+      dataType:
+        type: "Number"
+    - name: "PS_COMMENT"
+      dataType:
+        type: "String"
+  - name: "region"
+    identifier: "REGION"
+    columns:
+    - name: "R_REGIONKEY"
+      dataType:
+        type: "Number"
+    - name: "R_NAME"
+      dataType:
+        type: "String"
+    - name: "R_COMMENT"
+      dataType:
+        type: "String"
+  - name: "supplier"
+    identifier: "SUPPLIER"
+    columns:
+    - name: "S_SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "S_NAME"
+      dataType:
+        type: "String"
+    - name: "S_ADDRESS"
+      dataType:
+        type: "String"
+    - name: "S_NATIONKEY"
+      dataType:
+        type: "Number"
+    - name: "S_PHONE"
+      dataType:
+        type: "String"
+    - name: "S_ACCTBAL"
+      dataType:
+        type: "Number"
+    - name: "S_COMMENT"
+      dataType:
+        type: "String"

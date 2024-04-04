@@ -25,7 +25,93 @@ subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/fct_orders_items:
     name: fct_orders_items
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_ITEM_KEY
+        dataType:
+          type: String
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_STATUS_CODE
+        dataType:
+          type: String
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: RETURN_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_LINE_NUMBER
+        dataType:
+          type: Number
+      - name: ORDER_LINE_STATUS_CODE
+        dataType:
+          type: String
+      - name: SHIP_DATE
+        dataType:
+          type: Date
+      - name: COMMIT_DATE
+        dataType:
+          type: Date
+      - name: RECEIPT_DATE
+        dataType:
+          type: Date
+      - name: SHIP_MODE_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_COST_AMOUNT
+        dataType:
+          type: Number
+      - name: BASE_PRICE
+        dataType:
+          type: Number
+      - name: DISCOUNT_PERCENTAGE
+        dataType:
+          type: Number
+      - name: DISCOUNTED_PRICE
+        dataType:
+          type: Number
+      - name: TAX_RATE
+        dataType:
+          type: Number
+      - name: ORDER_ITEM_COUNT
+        dataType:
+          type: Number
+      - name: QUANTITY
+        dataType:
+          type: Number
+      - name: GROSS_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: DISCOUNTED_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: ITEM_DISCOUNT_AMOUNT
+        dataType:
+          type: Number
+      - name: ITEM_TAX_AMOUNT
+        dataType:
+          type: Number
+      - name: NET_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -38,7 +124,18 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/nations:
     name: nations
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: NATION_NAME
+        dataType:
+          type: String
+      - name: REGION_KEY
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -50,7 +147,33 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/orders:
     name: orders
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_PRIORITY_CODE
+        dataType:
+          type: String
+      - name: ORDER_CLERK_NAME
+        dataType:
+          type: String
+      - name: SHIPPING_PRIORITY
+        dataType:
+          type: Number
+      - name: ORDER_AMOUNT
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -62,7 +185,24 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_part_supplier:
     name: base_part_supplier
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_AVAILABE_QUANTITY
+        dataType:
+          type: Number
+      - name: SUPPLIER_COST_AMOUNT
+        dataType:
+          type: Number
+      - name: PART_SUPPLIER_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -74,7 +214,54 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/rpt_minimum_cost_suppliers:
     name: rpt_minimum_cost_suppliers
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: SUPPLIER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_REGION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NATION_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_REGION_NAME
+        dataType:
+          type: String
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_COST_AMOUNT
+        dataType:
+          type: Number
+      - name: SUPPLIER_ADDRESS
+        dataType:
+          type: String
+      - name: SUPPLIER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: SUPPLIER_COST_RANK
+        dataType:
+          type: Number
+      - name: SUPPLIER_RANK
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -86,7 +273,33 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_customer:
     name: base_customer
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_ADDRESS
+        dataType:
+          type: String
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: CUSTOMER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: CUSTOMER_MARKET_SEGMENT_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -98,7 +311,51 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/fct_orders:
     name: fct_orders
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_PRIORITY_CODE
+        dataType:
+          type: String
+      - name: ORDER_CLERK_NAME
+        dataType:
+          type: String
+      - name: SHIPPING_PRIORITY
+        dataType:
+          type: Number
+      - name: ORDER_COUNT
+        dataType:
+          type: Number
+      - name: GROSS_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: ITEM_DISCOUNT_AMOUNT
+        dataType:
+          type: Number
+      - name: ITEM_TAX_AMOUNT
+        dataType:
+          type: Number
+      - name: NET_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -111,7 +368,75 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_part_supplier_xrf:
     name: dim_part_supplier_xrf
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_SUPPLIER_KEY
+        dataType:
+          type: String
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_NAME
+        dataType:
+          type: String
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_BRAND_NAME
+        dataType:
+          type: String
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_CONTAINER_DESC
+        dataType:
+          type: String
+      - name: RETAIL_PRICE
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_ADDRESS
+        dataType:
+          type: String
+      - name: SUPPLIER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: SUPPLIER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: SUPPLIER_NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NATION_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_REGION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_REGION_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_AVAILABE_QUANTITY
+        dataType:
+          type: Number
+      - name: SUPPLIER_COST_AMOUNT
+        dataType:
+          type: Number
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -123,7 +448,27 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/suppliers:
     name: suppliers
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_ADDRESS
+        dataType:
+          type: String
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: SUPPLIER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -135,7 +480,42 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_supplier:
     name: dim_supplier
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_ADDRESS
+        dataType:
+          type: String
+      - name: SUPPLIER_NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NATION_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_REGION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_REGION_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: SUPPLIER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -147,7 +527,30 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_supplier:
     name: base_supplier
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: SUPPLIER_ADDRESS
+        dataType:
+          type: String
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: SUPPLIER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: SUPPLIER_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -159,7 +562,81 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/orders_items:
     name: orders_items
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_ITEM_KEY
+        dataType:
+          type: String
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_STATUS_CODE
+        dataType:
+          type: String
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: RETURN_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_LINE_NUMBER
+        dataType:
+          type: Number
+      - name: ORDER_LINE_STATUS_CODE
+        dataType:
+          type: String
+      - name: SHIP_DATE
+        dataType:
+          type: Date
+      - name: COMMIT_DATE
+        dataType:
+          type: Date
+      - name: RECEIPT_DATE
+        dataType:
+          type: Date
+      - name: SHIP_MODE_NAME
+        dataType:
+          type: String
+      - name: QUANTITY
+        dataType:
+          type: Number
+      - name: BASE_PRICE
+        dataType:
+          type: Number
+      - name: DISCOUNT_PERCENTAGE
+        dataType:
+          type: Number
+      - name: DISCOUNTED_PRICE
+        dataType:
+          type: Number
+      - name: GROSS_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: DISCOUNTED_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: ITEM_DISCOUNT_AMOUNT
+        dataType:
+          type: Number
+      - name: TAX_RATE
+        dataType:
+          type: Number
+      - name: ITEM_TAX_AMOUNT
+        dataType:
+          type: Number
+      - name: NET_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -171,7 +648,45 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_customer:
     name: dim_customer
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_ADDRESS
+        dataType:
+          type: String
+      - name: CUSTOMER_NATION_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_NATION_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_REGION_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_REGION_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: CUSTOMER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: CUSTOMER_MARKET_SEGMENT_NAME
+        dataType:
+          type: String
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -183,7 +698,39 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/rpt_pricing_summary:
     name: rpt_pricing_summary
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: RETURN_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_LINE_STATUS_CODE
+        dataType:
+          type: String
+      - name: QUANTITY
+        dataType:
+          type: Number
+      - name: GROSS_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: DISCOUNTED_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: NET_ITEM_SALES_AMOUNT
+        dataType:
+          type: Number
+      - name: AVG_QUANTITY
+        dataType:
+          type: Number
+      - name: AVG_BASE_PRICE
+        dataType:
+          type: Number
+      - name: AVG_DISCOUNT_PERCENTAGE
+        dataType:
+          type: Number
+      - name: ORDER_ITEM_COUNT
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -195,7 +742,39 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_part:
     name: dim_part
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_NAME
+        dataType:
+          type: String
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_BRAND_NAME
+        dataType:
+          type: String
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_CONTAINER_DESC
+        dataType:
+          type: String
+      - name: RETAIL_PRICE
+        dataType:
+          type: Number
+      - name: DBT_BATCH_ID
+        dataType:
+          type: String
+      - name: DBT_BATCH_TS
+        dataType:
+          type: Timestamp
     description: null
     author: haresh@prophecy.io
     files:
@@ -207,7 +786,15 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/regions:
     name: regions
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: REGION_KEY
+        dataType:
+          type: Number
+      - name: REGION_NAME
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -219,7 +806,18 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_region:
     name: base_region
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: REGION_KEY
+        dataType:
+          type: Number
+      - name: REGION_NAME
+        dataType:
+          type: String
+      - name: REGION_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -231,7 +829,36 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_orders:
     name: base_orders
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_AMOUNT
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: ORDER_PRIORITY_CODE
+        dataType:
+          type: String
+      - name: ORDER_CLERK_NAME
+        dataType:
+          type: String
+      - name: SHIPPING_PRIORITY
+        dataType:
+          type: Number
+      - name: ORDER_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -243,7 +870,30 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/customers:
     name: customers
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: CUSTOMER_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_NAME
+        dataType:
+          type: String
+      - name: CUSTOMER_ADDRESS
+        dataType:
+          type: String
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: CUSTOMER_PHONE_NUMBER
+        dataType:
+          type: String
+      - name: CUSTOMER_ACCOUNT_BALANCE
+        dataType:
+          type: Number
+      - name: CUSTOMER_MARKET_SEGMENT_NAME
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -255,7 +905,33 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/parts:
     name: parts
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_NAME
+        dataType:
+          type: String
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_BRAND_NAME
+        dataType:
+          type: String
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_CONTAINER_DESC
+        dataType:
+          type: String
+      - name: RETAIL_PRICE
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -267,7 +943,21 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_nation:
     name: base_nation
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: NATION_NAME
+        dataType:
+          type: String
+      - name: REGION_KEY
+        dataType:
+          type: Number
+      - name: NATION_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -279,7 +969,36 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_part:
     name: base_part
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_NAME
+        dataType:
+          type: String
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_BRAND_NAME
+        dataType:
+          type: String
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_CONTAINER_DESC
+        dataType:
+          type: String
+      - name: RETAIL_PRICE
+        dataType:
+          type: Number
+      - name: PART_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -291,7 +1010,57 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_line_item:
     name: base_line_item
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_KEY
+        dataType:
+          type: Number
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: ORDER_LINE_NUMBER
+        dataType:
+          type: Number
+      - name: QUANTITY
+        dataType:
+          type: Number
+      - name: EXTENDED_PRICE
+        dataType:
+          type: Number
+      - name: DISCOUNT_PERCENTAGE
+        dataType:
+          type: Number
+      - name: TAX_RATE
+        dataType:
+          type: Number
+      - name: RETURN_STATUS_CODE
+        dataType:
+          type: String
+      - name: ORDER_LINE_STATUS_CODE
+        dataType:
+          type: String
+      - name: SHIP_DATE
+        dataType:
+          type: Date
+      - name: COMMIT_DATE
+        dataType:
+          type: Date
+      - name: RECEIPT_DATE
+        dataType:
+          type: Date
+      - name: SHIP_INSTRUCTIONS_DESC
+        dataType:
+          type: String
+      - name: SHIP_MODE_NAME
+        dataType:
+          type: String
+      - name: ORDER_LINE_COMMENT
+        dataType:
+          type: String
     description: null
     author: haresh@prophecy.io
     files:
@@ -303,7 +1072,51 @@ sqlModels:
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/parts_suppliers:
     name: parts_suppliers
-    schema: null
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PART_SUPPLIER_KEY
+        dataType:
+          type: String
+      - name: PART_KEY
+        dataType:
+          type: Number
+      - name: PART_NAME
+        dataType:
+          type: String
+      - name: PART_MANUFACTURER_NAME
+        dataType:
+          type: String
+      - name: PART_BRAND_NAME
+        dataType:
+          type: String
+      - name: PART_TYPE_NAME
+        dataType:
+          type: String
+      - name: PART_SIZE
+        dataType:
+          type: Number
+      - name: PART_CONTAINER_DESC
+        dataType:
+          type: String
+      - name: RETAIL_PRICE
+        dataType:
+          type: Number
+      - name: SUPPLIER_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_NAME
+        dataType:
+          type: String
+      - name: NATION_KEY
+        dataType:
+          type: Number
+      - name: SUPPLIER_AVAILABE_QUANTITY
+        dataType:
+          type: Number
+      - name: SUPPLIER_COST_AMOUNT
+        dataType:
+          type: Number
     description: null
     author: haresh@prophecy.io
     files:
@@ -314,6 +1127,16 @@ sqlModels:
       datasets: []
     createdAt: '2024-04-03 17:37:25'
 sqlMacros:
+  .prophecy/metadata/sqlmacros/dateadd:
+    name: dateadd
+    macroType: query
+    description: null
+    author: haresh@prophecy.io
+    files:
+    - macros/dateadd.sql
+    - .prophecy/ide/macros/dateadd.json
+    - macros/macros.yml
+    createdAt: '2024-04-04 09:40:47'
   .prophecy/metadata/sqlmacros/dbt_housekeeping:
     name: dbt_housekeeping
     macroType: expression
@@ -323,16 +1146,26 @@ sqlMacros:
     - macros/dbt_housekeeping.sql
     - .prophecy/ide/macros/dbt_housekeeping.json
     createdAt: '2024-04-03 17:37:25'
-  .prophecy/metadata/sqlmacros/generate_schema_name:
-    name: generate_schema_name
+  .prophecy/metadata/sqlmacros/surrogate_key:
+    name: surrogate_key
+    macroType: expression
+    description: null
+    author: haresh@prophecy.io
+    files:
+    - macros/surrogate_key.sql
+    - .prophecy/ide/macros/surrogate_key.json
+    - macros/macros.yml
+    createdAt: '2024-04-04 06:47:47'
+  .prophecy/metadata/sqlmacros/generate_schema_name_for_env:
+    name: generate_schema_name_for_env
     macroType: expression
     description: null
     author: haresh@prophecy.io
     files:
     - macros/get_custom_schema.sql
     createdAt: '2024-04-03 17:37:25'
-  .prophecy/metadata/sqlmacros/generate_schema_name_for_env:
-    name: generate_schema_name_for_env
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
     macroType: expression
     description: null
     author: haresh@prophecy.io
@@ -360,56 +1193,239 @@ sqlSources:
     - name: customer
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: C_CUSTKEY
+          dataType:
+            type: Number
+        - name: C_NAME
+          dataType:
+            type: String
+        - name: C_ADDRESS
+          dataType:
+            type: String
+        - name: C_NATIONKEY
+          dataType:
+            type: Number
+        - name: C_PHONE
+          dataType:
+            type: String
+        - name: C_ACCTBAL
+          dataType:
+            type: Number
+        - name: C_MKTSEGMENT
+          dataType:
+            type: String
+        - name: C_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: lineitem
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: L_ORDERKEY
+          dataType:
+            type: Number
+        - name: L_PARTKEY
+          dataType:
+            type: Number
+        - name: L_SUPPKEY
+          dataType:
+            type: Number
+        - name: L_LINENUMBER
+          dataType:
+            type: Number
+        - name: L_QUANTITY
+          dataType:
+            type: Number
+        - name: L_EXTENDEDPRICE
+          dataType:
+            type: Number
+        - name: L_DISCOUNT
+          dataType:
+            type: Number
+        - name: L_TAX
+          dataType:
+            type: Number
+        - name: L_RETURNFLAG
+          dataType:
+            type: String
+        - name: L_LINESTATUS
+          dataType:
+            type: String
+        - name: L_SHIPDATE
+          dataType:
+            type: Date
+        - name: L_COMMITDATE
+          dataType:
+            type: Date
+        - name: L_RECEIPTDATE
+          dataType:
+            type: Date
+        - name: L_SHIPINSTRUCT
+          dataType:
+            type: String
+        - name: L_SHIPMODE
+          dataType:
+            type: String
+        - name: L_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: nation
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: N_NATIONKEY
+          dataType:
+            type: Number
+        - name: N_NAME
+          dataType:
+            type: String
+        - name: N_REGIONKEY
+          dataType:
+            type: Number
+        - name: N_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: orders
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: O_ORDERKEY
+          dataType:
+            type: Number
+        - name: O_CUSTKEY
+          dataType:
+            type: Number
+        - name: O_ORDERSTATUS
+          dataType:
+            type: String
+        - name: O_TOTALPRICE
+          dataType:
+            type: Number
+        - name: O_ORDERDATE
+          dataType:
+            type: Date
+        - name: O_ORDERPRIORITY
+          dataType:
+            type: String
+        - name: O_CLERK
+          dataType:
+            type: String
+        - name: O_SHIPPRIORITY
+          dataType:
+            type: Number
+        - name: O_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: part
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: P_PARTKEY
+          dataType:
+            type: Number
+        - name: P_NAME
+          dataType:
+            type: String
+        - name: P_MFGR
+          dataType:
+            type: String
+        - name: P_BRAND
+          dataType:
+            type: String
+        - name: P_TYPE
+          dataType:
+            type: String
+        - name: P_SIZE
+          dataType:
+            type: Number
+        - name: P_CONTAINER
+          dataType:
+            type: String
+        - name: P_RETAILPRICE
+          dataType:
+            type: Number
+        - name: P_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: partsupp
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: PS_PARTKEY
+          dataType:
+            type: Number
+        - name: PS_SUPPKEY
+          dataType:
+            type: Number
+        - name: PS_AVAILQTY
+          dataType:
+            type: Number
+        - name: PS_SUPPLYCOST
+          dataType:
+            type: Number
+        - name: PS_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: region
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: R_REGIONKEY
+          dataType:
+            type: Number
+        - name: R_NAME
+          dataType:
+            type: String
+        - name: R_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: supplier
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: S_SUPPKEY
+          dataType:
+            type: Number
+        - name: S_NAME
+          dataType:
+            type: String
+        - name: S_ADDRESS
+          dataType:
+            type: String
+        - name: S_NATIONKEY
+          dataType:
+            type: Number
+        - name: S_PHONE
+          dataType:
+            type: String
+        - name: S_ACCTBAL
+          dataType:
+            type: Number
+        - name: S_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'

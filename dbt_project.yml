@@ -39,8 +39,6 @@ models:
       schema: "base"
     ods:
       schema: "ods"
-    vars:
-      max_ship_date: "'1998-12-01'"
     wh:
       schema: "wh"
 
@@ -51,3 +49,6 @@ quoting:
   database: false
   schema: false
   identifier: false
+
+vars:
+  max_ship_date: "'1998-12-01'"

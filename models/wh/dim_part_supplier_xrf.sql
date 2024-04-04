@@ -1,78 +1,89 @@
 {{
-    config(
-        materialized = 'table'
-    )
+  config({    
+    "materialized": "table"
+  })
 }}
-with suppliers as (
 
-    select * from {{ ref('suppliers') }}
+WITH nations AS (
 
-),
-parts as (
-    
-    select * from {{ ref('parts') }}
+  SELECT * 
+  
+  FROM {{ ref('nations')}}
 
 ),
-parts_suppliers as (
 
-    select * from {{ ref('parts_suppliers') }}
+parts AS (
 
-),
-nations as (
-
-    select * from {{ ref('nations') }}
-),
-regions as (
-
-    select * from {{ ref('regions') }}
+  SELECT * 
+  
+  FROM {{ ref('parts')}}
 
 ),
-final as (
 
-    select 
-        ps.part_supplier_key,
+parts_suppliers AS (
 
-        p.part_key,
-        p.part_name,
-        p.part_manufacturer_name,
-        p.part_brand_name,
-        p.part_type_name,
-        p.part_size,
-        p.part_container_desc,
-        p.retail_price,
+  SELECT * 
+  
+  FROM {{ ref('parts_suppliers')}}
 
-        s.supplier_key,
-        s.supplier_name,
-        supplier_address,
-        s.supplier_phone_number,
-        s.supplier_account_balance,
-        n.nation_key as supplier_nation_key,
-        n.nation_name as supplier_nation_name,
-        r.region_key as supplier_region_key,
-        r.region_name as supplier_region_name,
+),
 
-        ps.supplier_availabe_quantity,
-        ps.supplier_cost_amount
-    from
-        parts p
-        join
-        parts_suppliers ps
-            on p.part_key = ps.part_key
-        join
-        suppliers s
-            on ps.supplier_key = s.supplier_key
-        join
-        nations n
-            on s.nation_key = n.nation_key
-        join
-        regions r
-            on n.region_key = r.region_key
+regions AS (
+
+  SELECT * 
+  
+  FROM {{ ref('regions')}}
+
+),
+
+suppliers AS (
+
+  SELECT * 
+  
+  FROM {{ ref('suppliers')}}
+
+),
+
+final AS (
+
+  SELECT 
+    ps.part_supplier_key,
+    p.part_key,
+    p.part_name,
+    p.part_manufacturer_name,
+    p.part_brand_name,
+    p.part_type_name,
+    p.part_size,
+    p.part_container_desc,
+    p.retail_price,
+    s.supplier_key,
+    s.supplier_name,
+    supplier_address,
+    s.supplier_phone_number,
+    s.supplier_account_balance,
+    n.nation_key AS supplier_nation_key,
+    n.nation_name AS supplier_nation_name,
+    r.region_key AS supplier_region_key,
+    r.region_name AS supplier_region_name,
+    ps.supplier_availabe_quantity,
+    ps.supplier_cost_amount
+  
+  FROM parts AS p
+  JOIN parts_suppliers AS ps
+     ON p.part_key = ps.part_key
+  JOIN suppliers AS s
+     ON ps.supplier_key = s.supplier_key
+  JOIN nations AS n
+     ON s.nation_key = n.nation_key
+  JOIN regions AS r
+     ON n.region_key = r.region_key
+
 )
-select 
-    f.*,
-    {{ dbt_housekeeping() }}
-from
-    final f
-order by
-    f.part_key,
-    f.supplier_key
+
+SELECT 
+  f.*,
+  {{ dbt_housekeeping() }}
+
+FROM final AS f
+
+ORDER BY f.part_key, f.supplier_key
