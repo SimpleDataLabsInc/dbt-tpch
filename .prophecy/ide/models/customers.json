@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "customers##TrOiOZeK" : {
-      "id" : "customers##TrOiOZeK",
+    "customers##oY9XP0or" : {
+      "id" : "customers##oY9XP0or",
       "component" : "Model",
       "metadata" : {
         "label" : "customers",
@@ -35,59 +35,15 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "n3ilCAIf",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "XtVI7NC0",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "customers##DQghn0mn" : {
-      "id" : "customers##DQghn0mn",
+    "customers##TnXVAUZX" : {
+      "id" : "customers##TnXVAUZX",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "customers",
@@ -106,94 +62,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "CHSwTs3j",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "NqxcqiNb",
           "slug" : "c"
         } ],
         "outputs" : [ {
-          "id" : "knVBicWM",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CUSTOMER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_MARKET_SEGMENT_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "HyJEECxo",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -202,11 +75,11 @@
     }
   },
   "connections" : [ {
-    "id" : "PWtrdUv9",
-    "source" : "customers##TrOiOZeK",
-    "sourcePort" : "n3ilCAIf",
-    "target" : "customers##DQghn0mn",
-    "targetPort" : "CHSwTs3j"
+    "id" : "I9moI5Lp",
+    "source" : "customers##oY9XP0or",
+    "sourcePort" : "XtVI7NC0",
+    "target" : "customers##TnXVAUZX",
+    "targetPort" : "NqxcqiNb"
   } ],
   "component" : "Model"
 }

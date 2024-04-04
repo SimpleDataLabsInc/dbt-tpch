@@ -2,7 +2,7 @@
   "id" : "base_part",
   "metainfo" : {
     "label" : "base_part",
-    "autoLayout" : false,
+    "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -19,13 +19,11 @@
     "version" : 3
   },
   "processes" : {
-    "base_part##UJW3peVk" : {
-      "id" : "base_part##UJW3peVk",
+    "base_part##yBwtuL0F" : {
+      "id" : "base_part##yBwtuL0F",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_part",
-        "x" : 20,
-        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -42,56 +40,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "El9Y3boO",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "VYWJU5am",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

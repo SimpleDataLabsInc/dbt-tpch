@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "suppliers##HG9c0mhF" : {
-      "id" : "suppliers##HG9c0mhF",
+    "suppliers##shafkclF" : {
+      "id" : "suppliers##shafkclF",
       "component" : "Model",
       "metadata" : {
         "label" : "suppliers",
@@ -35,54 +35,15 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "CrNQoR7V",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "VLNsanZO",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "suppliers##G796VbGw" : {
-      "id" : "suppliers##G796VbGw",
+    "suppliers##HhpbaoLS" : {
+      "id" : "suppliers##HhpbaoLS",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "suppliers",
@@ -101,84 +62,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "AcWpskYR",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "eGDB3qNu",
           "slug" : "s"
         } ],
         "outputs" : [ {
-          "id" : "xr0sjeBx",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "yl4Y5zQh",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -187,11 +75,11 @@
     }
   },
   "connections" : [ {
-    "id" : "Y2wfNwkH",
-    "source" : "suppliers##HG9c0mhF",
-    "sourcePort" : "CrNQoR7V",
-    "target" : "suppliers##G796VbGw",
-    "targetPort" : "AcWpskYR"
+    "id" : "ndplUbrL",
+    "source" : "suppliers##shafkclF",
+    "sourcePort" : "VLNsanZO",
+    "target" : "suppliers##HhpbaoLS",
+    "targetPort" : "eGDB3qNu"
   } ],
   "component" : "Model"
 }

@@ -2,7 +2,7 @@
   "id" : "dim_part_supplier_xrf",
   "metainfo" : {
     "label" : "dim_part_supplier_xrf",
-    "autoLayout" : false,
+    "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -19,13 +19,34 @@
     "version" : 3
   },
   "processes" : {
-    "suppliers##BCgv1CxL" : {
-      "id" : "suppliers##BCgv1CxL",
+    "regions##d92m51H8" : {
+      "id" : "regions##d92m51H8",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "regions",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "d7MpXfqE",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "suppliers##PLd5dYyg" : {
+      "id" : "suppliers##PLd5dYyg",
       "component" : "Model",
       "metadata" : {
         "label" : "suppliers",
-        "x" : 20,
-        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -37,349 +58,41 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "SQiZIgMQ",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "o0YdxFrx",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "dim_part_supplier_xrf##hxsTWAzs" : {
-      "id" : "dim_part_supplier_xrf##hxsTWAzs",
-      "component" : "TargetModel",
-      "metadata" : {
-        "label" : "dim_part_supplier_xrf",
-        "x" : 500,
-        "y" : 420,
-        "phase" : 0,
-        "macroDependencies" : [ "dbt_housekeeping" ]
-      },
-      "properties" : {
-        "customQueryDisabled" : false,
-        "customQuery" : true,
-        "incrementalEditorDisabled" : true,
-        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.part_key, f.supplier_key\n",
-        "incrementalKey" : false,
-        "incremental" : {
-          "expression" : "true"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "NADE0LpK",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "f"
-        } ],
-        "outputs" : [ {
-          "id" : "vF1NUoFx",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DBT_BATCH_ID",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "DBT_BATCH_TS",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "nations##J7MZpBys" : {
-      "id" : "nations##J7MZpBys",
+    "parts##uqYj1aW6" : {
+      "id" : "parts##uqYj1aW6",
       "component" : "Model",
       "metadata" : {
-        "label" : "nations",
-        "x" : 20,
-        "y" : 620,
+        "label" : "parts",
         "phase" : 0
       },
       "properties" : {
         "table" : {
-          "name" : "nations",
+          "name" : "parts",
           "sourceType" : "Model"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "oywGtbWA",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NATION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "WiTKFtjI",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "final##ml3p53X8" : {
-      "id" : "final##ml3p53X8",
+    "final##ttJEFsKj" : {
+      "id" : "final##ttJEFsKj",
       "component" : "Join",
       "metadata" : {
         "label" : "final",
-        "x" : 280,
-        "y" : 400,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -500,394 +213,88 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Vig4LwEq",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "I6C9QOuU",
           "slug" : "p"
         }, {
-          "id" : "nNTnnv2O",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "RkQ6M4Mh",
           "slug" : "ps"
         }, {
-          "id" : "Zg5APPz0",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "cKhxVPjd",
           "slug" : "s"
         }, {
-          "id" : "qfAYZ1k2",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NATION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "ciPDX60J",
           "slug" : "n"
         }, {
-          "id" : "FFVpcJg0",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "f8Bbpj9u",
           "slug" : "r"
         } ],
         "outputs" : [ {
-          "id" : "xYAar1BP",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ADDRESS",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_PHONE_NUMBER",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_ACCOUNT_BALANCE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NATION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "DbPJoRzn",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "parts##I9ptCJf6" : {
-      "id" : "parts##I9ptCJf6",
+    "dim_part_supplier_xrf##sm1rAXxZ" : {
+      "id" : "dim_part_supplier_xrf##sm1rAXxZ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "dim_part_supplier_xrf",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.part_key, f.supplier_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gtNWF6mp",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "bgJV5slb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nations##QYBKfOyK" : {
+      "id" : "nations##QYBKfOyK",
       "component" : "Model",
       "metadata" : {
-        "label" : "parts",
-        "x" : 20,
-        "y" : 20,
+        "label" : "nations",
         "phase" : 0
       },
       "properties" : {
         "table" : {
-          "name" : "parts",
+          "name" : "nations",
           "sourceType" : "Model"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "sRlUqkGd",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "QrNLGXJt",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "parts_suppliers##kNI4znZG" : {
-      "id" : "parts_suppliers##kNI4znZG",
+    "parts_suppliers##zsAAUuWF" : {
+      "id" : "parts_suppliers##zsAAUuWF",
       "component" : "Model",
       "metadata" : {
         "label" : "parts_suppliers",
-        "x" : 20,
-        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -899,120 +306,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "nN1TXlx1",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_MANUFACTURER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_BRAND_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_TYPE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_SIZE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_CONTAINER_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "RETAIL_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "NATION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "regions##LXpBpjcN" : {
-      "id" : "regions##LXpBpjcN",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "regions",
-        "x" : 20,
-        "y" : 820,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "regions",
-          "sourceType" : "Model"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "KZzQUi4j",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "XBauY6iy",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -1021,41 +315,41 @@
     }
   },
   "connections" : [ {
-    "id" : "wRPsC6So",
-    "source" : "parts##I9ptCJf6",
-    "sourcePort" : "sRlUqkGd",
-    "target" : "final##ml3p53X8",
-    "targetPort" : "Vig4LwEq"
+    "id" : "DIv1FviT",
+    "source" : "parts##uqYj1aW6",
+    "sourcePort" : "WiTKFtjI",
+    "target" : "final##ttJEFsKj",
+    "targetPort" : "I6C9QOuU"
   }, {
-    "id" : "HMPb60BY",
-    "source" : "parts_suppliers##kNI4znZG",
-    "sourcePort" : "nN1TXlx1",
-    "target" : "final##ml3p53X8",
-    "targetPort" : "nNTnnv2O"
+    "id" : "SsgOGzHF",
+    "source" : "parts_suppliers##zsAAUuWF",
+    "sourcePort" : "XBauY6iy",
+    "target" : "final##ttJEFsKj",
+    "targetPort" : "RkQ6M4Mh"
   }, {
-    "id" : "BHPdRCxG",
-    "source" : "suppliers##BCgv1CxL",
-    "sourcePort" : "SQiZIgMQ",
-    "target" : "final##ml3p53X8",
-    "targetPort" : "Zg5APPz0"
+    "id" : "ng9sFf9C",
+    "source" : "suppliers##PLd5dYyg",
+    "sourcePort" : "o0YdxFrx",
+    "target" : "final##ttJEFsKj",
+    "targetPort" : "cKhxVPjd"
   }, {
-    "id" : "NFR8r8P2",
-    "source" : "nations##J7MZpBys",
-    "sourcePort" : "oywGtbWA",
-    "target" : "final##ml3p53X8",
-    "targetPort" : "qfAYZ1k2"
+    "id" : "qHUiLdVI",
+    "source" : "nations##QYBKfOyK",
+    "sourcePort" : "QrNLGXJt",
+    "target" : "final##ttJEFsKj",
+    "targetPort" : "ciPDX60J"
   }, {
-    "id" : "kVP70N89",
-    "source" : "regions##LXpBpjcN",
-    "sourcePort" : "KZzQUi4j",
-    "target" : "final##ml3p53X8",
-    "targetPort" : "FFVpcJg0"
+    "id" : "IHbWWTH7",
+    "source" : "regions##d92m51H8",
+    "sourcePort" : "d7MpXfqE",
+    "target" : "final##ttJEFsKj",
+    "targetPort" : "f8Bbpj9u"
   }, {
-    "id" : "sxfQ8WPY",
-    "source" : "final##ml3p53X8",
-    "sourcePort" : "xYAar1BP",
-    "target" : "dim_part_supplier_xrf##hxsTWAzs",
-    "targetPort" : "NADE0LpK"
+    "id" : "fJ5mT7qx",
+    "source" : "final##ttJEFsKj",
+    "sourcePort" : "DbPJoRzn",
+    "target" : "dim_part_supplier_xrf##sm1rAXxZ",
+    "targetPort" : "gtNWF6mp"
   } ],
   "component" : "Model"
 }

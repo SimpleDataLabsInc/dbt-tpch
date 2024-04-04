@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "regions##axyxp1qD" : {
-      "id" : "regions##axyxp1qD",
+    "regions##MdaPunfJ" : {
+      "id" : "regions##MdaPunfJ",
       "component" : "Model",
       "metadata" : {
         "label" : "regions",
@@ -35,34 +35,15 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "qiExVxy9",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "REGION_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "acGE92l8",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "regions##sqp8xPUK" : {
-      "id" : "regions##sqp8xPUK",
+    "regions##QwIUbgPY" : {
+      "id" : "regions##QwIUbgPY",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "regions",
@@ -81,44 +62,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "g4MWC5vr",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "REGION_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "MVsilDBw",
           "slug" : "r"
         } ],
         "outputs" : [ {
-          "id" : "PEShg8pl",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "Jhr9hIZR",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -127,11 +75,11 @@
     }
   },
   "connections" : [ {
-    "id" : "R1QV3NgE",
-    "source" : "regions##axyxp1qD",
-    "sourcePort" : "qiExVxy9",
-    "target" : "regions##sqp8xPUK",
-    "targetPort" : "g4MWC5vr"
+    "id" : "YNyWAqh8",
+    "source" : "regions##MdaPunfJ",
+    "sourcePort" : "acGE92l8",
+    "target" : "regions##QwIUbgPY",
+    "targetPort" : "MVsilDBw"
   } ],
   "component" : "Model"
 }

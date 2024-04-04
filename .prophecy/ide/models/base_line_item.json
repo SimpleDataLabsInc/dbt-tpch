@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "base_line_item##hSxLVbJ9" : {
-      "id" : "base_line_item##hSxLVbJ9",
+    "base_line_item##jJWHyeQe" : {
+      "id" : "base_line_item##jJWHyeQe",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_line_item",
@@ -40,91 +40,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "yHZnGTcA",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_LINE_NUMBER",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "EXTENDED_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNT_PERCENTAGE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "TAX_RATE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "RETURN_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_LINE_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIP_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "COMMIT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "RECEIPT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "SHIP_INSTRUCTIONS_DESC",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIP_MODE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_LINE_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "QxWhXouD",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

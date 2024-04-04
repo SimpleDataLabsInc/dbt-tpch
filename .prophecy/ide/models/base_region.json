@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "base_region##VUciLdRZ" : {
-      "id" : "base_region##VUciLdRZ",
+    "base_region##cqNcKn4I" : {
+      "id" : "base_region##cqNcKn4I",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_region",
@@ -40,26 +40,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "ed6KU4ic",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "REGION_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "REGION_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "REGION_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "MG8nWeiW",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

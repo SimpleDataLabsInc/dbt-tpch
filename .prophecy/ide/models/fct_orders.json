@@ -19,8 +19,85 @@
     "version" : 3
   },
   "processes" : {
-    "order_item_summary##pnKf5Lb9" : {
-      "id" : "order_item_summary##pnKf5Lb9",
+    "orders_items##xL5IPNbK" : {
+      "id" : "orders_items##xL5IPNbK",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders_items",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders_items",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "NMfMAxWh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fct_orders##QSFamQfY" : {
+      "id" : "fct_orders##QSFamQfY",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "fct_orders",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_housekeeping" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.order_date\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "C0a5nToO",
+          "slug" : "f"
+        } ],
+        "outputs" : [ {
+          "id" : "WdFphS7S",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "orders##KIMUlrJm" : {
+      "id" : "orders##KIMUlrJm",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "orders",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Gz7PEtIP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "order_item_summary##UWsVclJw" : {
+      "id" : "order_item_summary##UWsVclJw",
       "component" : "Aggregate",
       "metadata" : {
         "label" : "order_item_summary",
@@ -67,172 +144,19 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "dwkPuTBF",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_ITEM_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "RETURN_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_LINE_NUMBER",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_LINE_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIP_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "COMMIT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "RECEIPT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "SHIP_MODE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "BASE_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNT_PERCENTAGE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNTED_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "TAX_RATE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "pr3XpgE2",
           "slug" : "o"
         } ],
         "outputs" : [ {
-          "id" : "GervXLLG",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "W98hHDM1",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "final##Oa3ypbHW" : {
-      "id" : "final##Oa3ypbHW",
+    "final##Ns9blrqR" : {
+      "id" : "final##Ns9blrqR",
       "component" : "Join",
       "metadata" : {
         "label" : "final",
@@ -303,534 +227,14 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "EMO6j2Tf",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "tlwkUoPv",
           "slug" : "o"
         }, {
-          "id" : "BhxVrexY",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
+          "id" : "PUyWZeyn",
           "slug" : "s"
         } ],
         "outputs" : [ {
-          "id" : "bUR333Ao",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_COUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "orders_items##jGHYU4G7" : {
-      "id" : "orders_items##jGHYU4G7",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "orders_items",
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "orders_items",
-          "sourceType" : "Model"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "yRJ4wdEJ",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_ITEM_KEY",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "RETURN_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_LINE_NUMBER",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_LINE_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIP_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "COMMIT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "RECEIPT_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "SHIP_MODE_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "BASE_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNT_PERCENTAGE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNTED_PRICE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DISCOUNTED_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "TAX_RATE",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "orders##OieNDoGB" : {
-      "id" : "orders##OieNDoGB",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "orders",
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "orders",
-          "sourceType" : "Model"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "TI7yhGeK",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "fct_orders##RFdWDixW" : {
-      "id" : "fct_orders##RFdWDixW",
-      "component" : "TargetModel",
-      "metadata" : {
-        "label" : "fct_orders",
-        "phase" : 0,
-        "macroDependencies" : [ "dbt_housekeeping" ]
-      },
-      "properties" : {
-        "customQueryDisabled" : false,
-        "customQuery" : true,
-        "incrementalEditorDisabled" : true,
-        "query" : "SELECT \n  f.*,\n  {{ dbt_housekeeping() }}\n\nFROM final AS f\n\nORDER BY f.order_date\n",
-        "incrementalKey" : false,
-        "incremental" : {
-          "expression" : "true"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "B2jKi6W2",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_COUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            } ]
-          },
-          "slug" : "f"
-        } ],
-        "outputs" : [ {
-          "id" : "VrY9elXe",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_COUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "GROSS_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_DISCOUNT_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ITEM_TAX_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "NET_ITEM_SALES_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "DBT_BATCH_ID",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "DBT_BATCH_TS",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            } ]
-          },
+          "id" : "hsSCga6X",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -839,29 +243,29 @@
     }
   },
   "connections" : [ {
-    "id" : "o0ZOGTZQ",
-    "source" : "orders_items##jGHYU4G7",
-    "sourcePort" : "yRJ4wdEJ",
-    "target" : "order_item_summary##pnKf5Lb9",
-    "targetPort" : "dwkPuTBF"
+    "id" : "P5o05G6P",
+    "source" : "orders_items##xL5IPNbK",
+    "sourcePort" : "NMfMAxWh",
+    "target" : "order_item_summary##UWsVclJw",
+    "targetPort" : "pr3XpgE2"
   }, {
-    "id" : "RpxsHm1P",
-    "source" : "orders##OieNDoGB",
-    "sourcePort" : "TI7yhGeK",
-    "target" : "final##Oa3ypbHW",
-    "targetPort" : "EMO6j2Tf"
+    "id" : "RPwCKnUN",
+    "source" : "orders##KIMUlrJm",
+    "sourcePort" : "Gz7PEtIP",
+    "target" : "final##Ns9blrqR",
+    "targetPort" : "tlwkUoPv"
   }, {
-    "id" : "tIsCe334",
-    "source" : "order_item_summary##pnKf5Lb9",
-    "sourcePort" : "GervXLLG",
-    "target" : "final##Oa3ypbHW",
-    "targetPort" : "BhxVrexY"
+    "id" : "PSJ3RCbb",
+    "source" : "order_item_summary##UWsVclJw",
+    "sourcePort" : "W98hHDM1",
+    "target" : "final##Ns9blrqR",
+    "targetPort" : "PUyWZeyn"
   }, {
-    "id" : "ReyE54FU",
-    "source" : "final##Oa3ypbHW",
-    "sourcePort" : "bUR333Ao",
-    "target" : "fct_orders##RFdWDixW",
-    "targetPort" : "B2jKi6W2"
+    "id" : "pwNGZ43v",
+    "source" : "final##Ns9blrqR",
+    "sourcePort" : "hsSCga6X",
+    "target" : "fct_orders##QSFamQfY",
+    "targetPort" : "C0a5nToO"
   } ],
   "component" : "Model"
 }

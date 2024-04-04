@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "base_orders##daAqEQEM" : {
-      "id" : "base_orders##daAqEQEM",
+    "base_orders##aTysbfkq" : {
+      "id" : "base_orders##aTysbfkq",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_orders",
@@ -40,56 +40,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "vbSp7PJm",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "ORDER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_STATUS_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_DATE",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "ORDER_PRIORITY_CODE",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "ORDER_CLERK_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "SHIPPING_PRIORITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "ORDER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "weOeCf5S",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,

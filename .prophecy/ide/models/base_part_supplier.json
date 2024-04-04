@@ -2,7 +2,7 @@
   "id" : "base_part_supplier",
   "metainfo" : {
     "label" : "base_part_supplier",
-    "autoLayout" : false,
+    "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -19,13 +19,11 @@
     "version" : 3
   },
   "processes" : {
-    "base_part_supplier##zODD46n6" : {
-      "id" : "base_part_supplier##zODD46n6",
+    "base_part_supplier##MQZEVggr" : {
+      "id" : "base_part_supplier##MQZEVggr",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "base_part_supplier",
-        "x" : 20,
-        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ "money" ]
       },
@@ -42,36 +40,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "O0vfPWtN",
-          "schema" : {
-            "providerType" : "Snowflake",
-            "fields" : [ {
-              "name" : "PART_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_KEY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_AVAILABE_QUANTITY",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "SUPPLIER_COST_AMOUNT",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "PART_SUPPLIER_COMMENT",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "oTZ0vukC",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
