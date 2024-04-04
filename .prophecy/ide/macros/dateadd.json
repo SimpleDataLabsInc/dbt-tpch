@@ -2,7 +2,7 @@
   "dateadd" : {
     "name" : "dateadd",
     "macroType" : "query",
-    "definition" : "dateadd(\n        {{ datepart }},\n        {{ interval }},\n        {{ from_date_or_timestamp }}\n        )",
+    "definition" : "dateadd(\n        {{ datepart }},\n        {{ interval }},\n        {{ from_date_or_timestamp }}\n)",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -34,7 +34,7 @@
     "staleState" : "none",
     "propertiesFile" : {
       "name" : "macros",
-      "content" : "---\nversion: 2\nmacros:\n- name: \"surrogate_key\"\n  arguments: []\n  macroType: \"expression\"\n- name: \"dateadd\"\n  arguments:\n  - name: \"datepart\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"interval\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"surrogate_key\"\n  arguments: []\n  macroType: \"expression\"\n- name: \"dateadd\"\n  arguments:\n  - name: \"datepart\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"interval\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"from_date_or_timestamp\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
       "path" : "dbt_tpch/macros/macros.yml",
       "projectConfiguration" : null,
       "folderConfiguration" : {
@@ -51,6 +51,10 @@
             "description" : "{\"ProphecyType\": \"value\"}"
           }, {
             "name" : "interval",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "from_date_or_timestamp",
             "type" : "value",
             "description" : "{\"ProphecyType\": \"value\"}"
           } ],
