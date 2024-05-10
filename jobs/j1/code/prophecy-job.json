@@ -49,8 +49,8 @@
       "metadata" : {
         "label" : "Model_0",
         "slug" : "Model_0",
-        "x" : -660,
-        "y" : -320
+        "x" : -320,
+        "y" : -280
       },
       "ports" : {
         "inputs" : [ {
