@@ -6,7 +6,7 @@
     "name" : "j1",
     "dagName" : "HWc0y5UeW53vULOUVqc2Cg_",
     "schedule" : "None",
-    "enabled" : false,
+    "enabled" : true,
     "alerting" : {
       "emails" : "",
       "onStart" : false,

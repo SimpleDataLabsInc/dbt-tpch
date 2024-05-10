@@ -27,9 +27,9 @@ jobs:
     pipelines: []
     jobClusterMode:
       clusterMode:
-        Single: {}
+        Multi: {}
       clusterId: null
-    enabled: null
+    enabled: true
     createdAt: '2024-05-10 11:54:20'
     author: rajat+2@prophecy.io
 gemContainer:
