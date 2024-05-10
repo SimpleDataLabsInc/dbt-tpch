@@ -121,6 +121,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/nations:
     name: nations
@@ -144,6 +147,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/orders:
     name: orders
@@ -182,6 +188,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_part_supplier:
     name: base_part_supplier
@@ -211,6 +220,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/rpt_minimum_cost_suppliers:
     name: rpt_minimum_cost_suppliers
@@ -270,6 +282,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_customer:
     name: base_customer
@@ -308,6 +323,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/fct_orders:
     name: fct_orders
@@ -365,6 +383,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_part_supplier_xrf:
     name: dim_part_supplier_xrf
@@ -445,6 +466,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/suppliers:
     name: suppliers
@@ -477,6 +501,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_supplier:
     name: dim_supplier
@@ -524,6 +551,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_supplier:
     name: base_supplier
@@ -559,6 +589,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/orders_items:
     name: orders_items
@@ -645,6 +678,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_customer:
     name: dim_customer
@@ -695,6 +731,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/rpt_pricing_summary:
     name: rpt_pricing_summary
@@ -739,6 +778,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/dim_part:
     name: dim_part
@@ -783,6 +825,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/regions:
     name: regions
@@ -803,6 +848,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_region:
     name: base_region
@@ -826,6 +874,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_orders:
     name: base_orders
@@ -867,6 +918,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/customers:
     name: customers
@@ -902,6 +956,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/parts:
     name: parts
@@ -940,6 +997,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_nation:
     name: base_nation
@@ -966,6 +1026,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_part:
     name: base_part
@@ -1007,6 +1070,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/base_line_item:
     name: base_line_item
@@ -1069,6 +1135,9 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
   .prophecy/metadata/sqlmodels/parts_suppliers:
     name: parts_suppliers
@@ -1125,7 +1194,12 @@ sqlModels:
     sqlDependencies:
       models: []
       datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
     createdAt: '2024-04-03 17:37:25'
+sqlSnapshots: {}
+sqlTests: {}
 sqlMacros:
   .prophecy/metadata/sqlmacros/dateadd:
     name: dateadd
@@ -1193,56 +1267,239 @@ sqlSources:
     - name: customer
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: C_CUSTKEY
+          dataType:
+            type: Number
+        - name: C_NAME
+          dataType:
+            type: String
+        - name: C_ADDRESS
+          dataType:
+            type: String
+        - name: C_NATIONKEY
+          dataType:
+            type: Number
+        - name: C_PHONE
+          dataType:
+            type: String
+        - name: C_ACCTBAL
+          dataType:
+            type: Number
+        - name: C_MKTSEGMENT
+          dataType:
+            type: String
+        - name: C_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: lineitem
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: L_ORDERKEY
+          dataType:
+            type: Number
+        - name: L_PARTKEY
+          dataType:
+            type: Number
+        - name: L_SUPPKEY
+          dataType:
+            type: Number
+        - name: L_LINENUMBER
+          dataType:
+            type: Number
+        - name: L_QUANTITY
+          dataType:
+            type: Number
+        - name: L_EXTENDEDPRICE
+          dataType:
+            type: Number
+        - name: L_DISCOUNT
+          dataType:
+            type: Number
+        - name: L_TAX
+          dataType:
+            type: Number
+        - name: L_RETURNFLAG
+          dataType:
+            type: String
+        - name: L_LINESTATUS
+          dataType:
+            type: String
+        - name: L_SHIPDATE
+          dataType:
+            type: Date
+        - name: L_COMMITDATE
+          dataType:
+            type: Date
+        - name: L_RECEIPTDATE
+          dataType:
+            type: Date
+        - name: L_SHIPINSTRUCT
+          dataType:
+            type: String
+        - name: L_SHIPMODE
+          dataType:
+            type: String
+        - name: L_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: nation
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: N_NATIONKEY
+          dataType:
+            type: Number
+        - name: N_NAME
+          dataType:
+            type: String
+        - name: N_REGIONKEY
+          dataType:
+            type: Number
+        - name: N_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: orders
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: O_ORDERKEY
+          dataType:
+            type: Number
+        - name: O_CUSTKEY
+          dataType:
+            type: Number
+        - name: O_ORDERSTATUS
+          dataType:
+            type: String
+        - name: O_TOTALPRICE
+          dataType:
+            type: Number
+        - name: O_ORDERDATE
+          dataType:
+            type: Date
+        - name: O_ORDERPRIORITY
+          dataType:
+            type: String
+        - name: O_CLERK
+          dataType:
+            type: String
+        - name: O_SHIPPRIORITY
+          dataType:
+            type: Number
+        - name: O_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: part
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: P_PARTKEY
+          dataType:
+            type: Number
+        - name: P_NAME
+          dataType:
+            type: String
+        - name: P_MFGR
+          dataType:
+            type: String
+        - name: P_BRAND
+          dataType:
+            type: String
+        - name: P_TYPE
+          dataType:
+            type: String
+        - name: P_SIZE
+          dataType:
+            type: Number
+        - name: P_CONTAINER
+          dataType:
+            type: String
+        - name: P_RETAILPRICE
+          dataType:
+            type: Number
+        - name: P_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: partsupp
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: PS_PARTKEY
+          dataType:
+            type: Number
+        - name: PS_SUPPKEY
+          dataType:
+            type: Number
+        - name: PS_AVAILQTY
+          dataType:
+            type: Number
+        - name: PS_SUPPLYCOST
+          dataType:
+            type: Number
+        - name: PS_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: region
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: R_REGIONKEY
+          dataType:
+            type: Number
+        - name: R_NAME
+          dataType:
+            type: String
+        - name: R_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: supplier
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: S_SUPPKEY
+          dataType:
+            type: Number
+        - name: S_NAME
+          dataType:
+            type: String
+        - name: S_ADDRESS
+          dataType:
+            type: String
+        - name: S_NATIONKEY
+          dataType:
+            type: Number
+        - name: S_PHONE
+          dataType:
+            type: String
+        - name: S_ACCTBAL
+          dataType:
+            type: Number
+        - name: S_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'

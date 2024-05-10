@@ -2,7 +2,7 @@
   "id" : "orders",
   "metainfo" : {
     "label" : "orders",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -19,11 +19,13 @@
     "version" : 3
   },
   "processes" : {
-    "orders##LE960bbR" : {
-      "id" : "orders##LE960bbR",
+    "orders##KuFzD5mW" : {
+      "id" : "orders##KuFzD5mW",
       "component" : "Model",
       "metadata" : {
         "label" : "orders",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -35,7 +37,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "AAUFAw3e",
+          "id" : "kHj4GbNK",
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
@@ -91,11 +93,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "orders##LNjJTqlJ" : {
-      "id" : "orders##LNjJTqlJ",
+    "orders##W2VIAxVe" : {
+      "id" : "orders##W2VIAxVe",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "orders",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -111,7 +115,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "KBL6ZM9h",
+          "id" : "F83lYDgB",
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
@@ -164,7 +168,7 @@
           "slug" : "o"
         } ],
         "outputs" : [ {
-          "id" : "r3w6m6aj",
+          "id" : "aLTn7Gkx",
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
@@ -217,11 +221,11 @@
     }
   },
   "connections" : [ {
-    "id" : "yfxWzprt",
-    "source" : "orders##LE960bbR",
-    "sourcePort" : "AAUFAw3e",
-    "target" : "orders##LNjJTqlJ",
-    "targetPort" : "KBL6ZM9h"
+    "id" : "NC5Wphjz",
+    "source" : "orders##KuFzD5mW",
+    "sourcePort" : "kHj4GbNK",
+    "target" : "orders##W2VIAxVe",
+    "targetPort" : "F83lYDgB"
   } ],
   "component" : "Model"
 }
