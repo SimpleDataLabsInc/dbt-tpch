@@ -8,7 +8,7 @@
     "editable" : true
   },
   "providerType" : "snowflake",
-  "fabricId" : "11",
+  "fabricId" : "12270",
   "prophecyIDEFolder" : {
     "name" : "",
     "children" : { },
@@ -506,102 +506,5 @@
     "dependencies" : { },
     "prophecyProjectDependencies" : { }
   },
-  "entitiesToSync" : [ {
-    "name" : "customers",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "orders_items",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_customer",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_nation",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "suppliers",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_line_item",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "fct_orders_items",
-    "type" : "Model",
-    "syncedOnce" : true
-  }, {
-    "name" : "base_region",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "rpt_minimum_cost_suppliers",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "dim_customer",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "orders",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "fct_orders",
-    "type" : "Model",
-    "syncedOnce" : true
-  }, {
-    "name" : "dim_part_supplier_xrf",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_orders",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "nations",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_part",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_supplier",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "dim_part",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "dim_supplier",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "base_part_supplier",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "regions",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "parts_suppliers",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "rpt_pricing_summary",
-    "type" : "Model",
-    "syncedOnce" : false
-  }, {
-    "name" : "parts",
-    "type" : "Model",
-    "syncedOnce" : false
-  } ],
   "frontEndLanguage" : "sql"
 }

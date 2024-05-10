@@ -8,7 +8,30 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/j1:
+    name: j1
+    description: ''
+    fabricUID: 12269
+    scheduler:
+      Prophecy: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-05-10 11:54:20'
+    author: rajat+2@prophecy.io
 gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
@@ -1266,56 +1289,239 @@ sqlSources:
     - name: customer
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: C_CUSTKEY
+          dataType:
+            type: Number
+        - name: C_NAME
+          dataType:
+            type: String
+        - name: C_ADDRESS
+          dataType:
+            type: String
+        - name: C_NATIONKEY
+          dataType:
+            type: Number
+        - name: C_PHONE
+          dataType:
+            type: String
+        - name: C_ACCTBAL
+          dataType:
+            type: Number
+        - name: C_MKTSEGMENT
+          dataType:
+            type: String
+        - name: C_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: lineitem
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: L_ORDERKEY
+          dataType:
+            type: Number
+        - name: L_PARTKEY
+          dataType:
+            type: Number
+        - name: L_SUPPKEY
+          dataType:
+            type: Number
+        - name: L_LINENUMBER
+          dataType:
+            type: Number
+        - name: L_QUANTITY
+          dataType:
+            type: Number
+        - name: L_EXTENDEDPRICE
+          dataType:
+            type: Number
+        - name: L_DISCOUNT
+          dataType:
+            type: Number
+        - name: L_TAX
+          dataType:
+            type: Number
+        - name: L_RETURNFLAG
+          dataType:
+            type: String
+        - name: L_LINESTATUS
+          dataType:
+            type: String
+        - name: L_SHIPDATE
+          dataType:
+            type: Date
+        - name: L_COMMITDATE
+          dataType:
+            type: Date
+        - name: L_RECEIPTDATE
+          dataType:
+            type: Date
+        - name: L_SHIPINSTRUCT
+          dataType:
+            type: String
+        - name: L_SHIPMODE
+          dataType:
+            type: String
+        - name: L_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: nation
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: N_NATIONKEY
+          dataType:
+            type: Number
+        - name: N_NAME
+          dataType:
+            type: String
+        - name: N_REGIONKEY
+          dataType:
+            type: Number
+        - name: N_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: orders
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: O_ORDERKEY
+          dataType:
+            type: Number
+        - name: O_CUSTKEY
+          dataType:
+            type: Number
+        - name: O_ORDERSTATUS
+          dataType:
+            type: String
+        - name: O_TOTALPRICE
+          dataType:
+            type: Number
+        - name: O_ORDERDATE
+          dataType:
+            type: Date
+        - name: O_ORDERPRIORITY
+          dataType:
+            type: String
+        - name: O_CLERK
+          dataType:
+            type: String
+        - name: O_SHIPPRIORITY
+          dataType:
+            type: Number
+        - name: O_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: part
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: P_PARTKEY
+          dataType:
+            type: Number
+        - name: P_NAME
+          dataType:
+            type: String
+        - name: P_MFGR
+          dataType:
+            type: String
+        - name: P_BRAND
+          dataType:
+            type: String
+        - name: P_TYPE
+          dataType:
+            type: String
+        - name: P_SIZE
+          dataType:
+            type: Number
+        - name: P_CONTAINER
+          dataType:
+            type: String
+        - name: P_RETAILPRICE
+          dataType:
+            type: Number
+        - name: P_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: partsupp
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: PS_PARTKEY
+          dataType:
+            type: Number
+        - name: PS_SUPPKEY
+          dataType:
+            type: Number
+        - name: PS_AVAILQTY
+          dataType:
+            type: Number
+        - name: PS_SUPPLYCOST
+          dataType:
+            type: Number
+        - name: PS_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: region
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: R_REGIONKEY
+          dataType:
+            type: Number
+        - name: R_NAME
+          dataType:
+            type: String
+        - name: R_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
     - name: supplier
       schema:
         providerType: snowflake
-        fields: []
+        fields:
+        - name: S_SUPPKEY
+          dataType:
+            type: Number
+        - name: S_NAME
+          dataType:
+            type: String
+        - name: S_ADDRESS
+          dataType:
+            type: String
+        - name: S_NATIONKEY
+          dataType:
+            type: Number
+        - name: S_PHONE
+          dataType:
+            type: String
+        - name: S_ACCTBAL
+          dataType:
+            type: Number
+        - name: S_COMMENT
+          dataType:
+            type: String
       description: null
       author: haresh@prophecy.io
       createdAt: '2024-04-03 17:37:25'
