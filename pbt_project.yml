@@ -1,6 +1,6 @@
 name: dbt_tpch
 description: ''
-version: 0.0.1
+version: dev/0.0.1
 author: null
 language: sql
 buildSystem: ''
